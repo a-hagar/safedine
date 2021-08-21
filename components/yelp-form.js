@@ -18,12 +18,13 @@ export default class Form extends Component {
         console.log(userLocation)
 
         //yelp api call with user location
-        axios.get(`https://api.yelp.com/v3/businesses/search?location=${userLocation.address}, Toronto&radius=750&locale=en_CA&sort_by=distance`, 
+        axios.get(`https://api.yelp.com/v3/businesses/search?location=${userLocation.address},Toronto&radius=750&locale=en_CA&sort_by=distance`, 
         { 'headers' : 
-            { 'Authorization': 'Bearer qkjM50rQtmymrX4Sq_Ap78BMQcqUsT_GaEmBt0frT4-POnWzPbkA7Au6QB2jIH_KcxL3MSGuq0l0JxD0Hu_78J-3oRx-u6uzqu4NWIZYX4AEKZv-jRky096mOZQRYXYx',
+            { 'Authorization': `Bearer ${process.env.YELP_API_KEY}`,
              'Content-Type': 'application/json', 
              'Access-Control-Allow-Origin': '*',
              'Access-Control-Allow-Credentials': true,
+
         }})
         .then((response) => {
         console.log(response.data)
@@ -32,6 +33,7 @@ export default class Form extends Component {
         })
         .catch((err) => {
         console.log ('error')
+
         })
 
     }

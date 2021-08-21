@@ -15,16 +15,19 @@ function MapBox(){
     const options = {
         minZoom: 11,
         maxZoom: 16,
+        mapId: "75dee6d734ec4cc9",
         disableDefaultUI: true,
         zoomControl: true,
     };
 
+
     const libraries = ['places'];
 
     const {isLoaded,loadError} = useLoadScript({
-        googleMapsApiKey: "AIzaSyC_93cil1U6loBTf_1_tZMDQPmJ49SaH2o",
+        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
         libraries,
     });
+
 
 
     if (loadError) return "Error while loading map";
