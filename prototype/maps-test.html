@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test google api</title>
+</head>
+<body>
+    <h1>google maps api test</h1>
+    <div id="map" style="width: 60%; height: 700px">
+        <script type='text/javascript' 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDehX5W5IoXptK0avWUWRklJdqP8bsVW9g&callback=initMap&libraries=&v=weekly" async='false'></script>
+    </div>
+    <script type='text/javascript' defer>
+        //import TorontoBorders from '../torontoborders.js';
+        let map;
+        let mapId = "75dee6d734ec4cc9";
+
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 43.684070, lng: -79.399015},
+                zoom: 11,  
+                minZoom: 11,
+                maxZoom: 15,   
+                mapId: mapId,
+            });
+
+            var allowedBounds = new google.maps.LatLngBounds(
+                new google.maps.LatLng(43.646556, -79.608743), 
+                new google.maps.LatLng(43.794116, -79.117858)
+            );
+            var lastValidCenter = map.getCenter();
+
+            google.maps.event.addListener(map, 'center_changed', function() {
+                if (allowedBounds.contains(map.getCenter())) {
+                    lastValidCenter = map.getCenter();
+                    return; 
+
+                }
+
+                map.panTo(lastValidCenter);
+            });
+
+        }
+        
+    </script>
+</body>
+</html>
