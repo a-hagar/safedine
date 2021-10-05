@@ -20,7 +20,7 @@ export default class Form extends Component {
         console.log(userLocation.address)
 
         let myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer qkjM50rQtmymrX4Sq_Ap78BMQcqUsT_GaEmBt0frT4-POnWzPbkA7Au6QB2jIH_KcxL3MSGuq0l0JxD0Hu_78J-3oRx-u6uzqu4NWIZYX4AEKZv-jRky096mOZQRYXYx");
+        myHeaders.append("");
         myHeaders.append("Access-Control-Allow-Origin", "*");
 
         let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
