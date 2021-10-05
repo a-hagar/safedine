@@ -6,7 +6,11 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      height: {
+        '96': '613px', 
+      }
+    },
   },
   plugins: [],
 }

@@ -11,9 +11,10 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <div class='w-1/2'>
-          <h1 class='px-10 pt-12 text-3xl font-bold'>Find Toronto's finest restaurants</h1>
-          <p class='px-10 py-4'>SafeDine allows you to find the nearest restaurants in your location in Toronto and finds how</p>
+        <div className='w-1/2'>
+          <h1 className='px-10 pt-12 text-3xl font-bold'>Find Toronto's finest restaurants</h1>
+          <p className='px-10 py-4 pt-10'>SafeDine allows you to find the nearest restaurants in your location in Toronto and how close it is to your location.</p>
+          <p className='px-10'>Just search your location on the search bar and a map with the closest restaurants will show and a star rating to </p>
         </div>
 
       </main>
